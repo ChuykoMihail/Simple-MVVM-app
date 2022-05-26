@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_navigation"
+    app:startDestination="@id/incidentModelFragment">
+    <fragment
+        android:id="@+id/incidentModelFragment"
+        android:name="com.example.dicetest.ui.IncidentModelFragment"
+        android:label="fragment_item_list"
+        tools:layout="@layout/fragment_item_list" />
+</navigation>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+    <data>
+        <import type="android.view.View" />
+        <import type="com.example.dicetest.data.util.IncidentUtil"/>
+        <variable
+            name="itemData"
+            type="com.example.dicetest.data.repos.model.IncidentModel" />
+    </data>
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="12dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_margin="7dp"
+            card_view:cardCornerRadius="8dp"
+            card_view:cardElevation="3dp"
+            card_view:cardBackgroundColor="@color/cardview_light_background"
+            card_view:cardUseCompatPadding="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="16dp"
+                    android:layout_marginStart="12dp"
+                    android:id="@+id/ext_sys_name"
+                    android:hint="EXTSYSNAME"
+                    android:text="@{itemData.EXTSYSNAME}"
+                    android:textColor="@android:color/holo_red_light" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginBottom="7dp"
+                    android:id="@+id/description"
+                    android:hint="DESCRIPTION"
+                    android:text="@{itemData.DESCRIPTION}" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="#AEA7A7" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="3dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:text="Дата выявления"
+                        android:textColor="#A5ACB2" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="3dp"
+                        android:layout_marginEnd="12dp"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:id="@+id/is_known_error_date"
+                        android:text="@{IncidentUtil.}" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="#AEA7A7" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="3dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:text="Крайний срок"
+                        android:textColor="#A5ACB2" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="3dp"
+                        android:layout_marginEnd="12dp"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:id="@+id/target_finish"
+                        android:text="@{itemData.TARGETFINISH}" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="#AEA7A7" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="3dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:text="Статус"
+                        android:textColor="#A5ACB2" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="3dp"
+                        android:layout_marginEnd="12dp"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:id="@+id/status"
+                        android:text="@{itemData.STATUS}" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
+
+</layout>
+
