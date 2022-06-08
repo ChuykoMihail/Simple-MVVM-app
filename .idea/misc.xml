@@ -4,10 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/AndroidStudioProjects/DiceTest/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/AndroidStudioProjects/DiceTest/app/src/main/res/layout/fragment_incident_detail_fragemnt.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidStudioProjects/DiceTest/app/src/main/res/layout/fragment_item.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidStudioProjects/DiceTest/app/src/main/res/layout/fragment_item_list.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidStudioProjects/DiceTest/app/src/main/res/layout/fragment_item_list2.xml" value="0.35260416666666666" />
-        <entry key="..\:/AndroidStudioProjects/DiceTest/app/src/main/res/layout/incident_item.xml" value="0.5" />
+        <entry key="..\:/AndroidStudioProjects/DiceTest/app/src/main/res/layout/incident_item.xml" value="0.1" />
       </map>
     </option>
   </component>

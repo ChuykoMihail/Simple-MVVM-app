@@ -1,17 +1,15 @@
 package com.example.dicetest.data.util
 
-import java.text.SimpleDateFormat
 import java.time.OffsetDateTime
 import java.time.format.DateTimeFormatter
-import java.util.*
 
 class IncidentUtil {
-        companion object {
-            fun formatUnixTime(timeInSeconds: Long, pattern: String): String {
-                val simpleDateFormat = SimpleDateFormat(pattern, Locale.US)
-                val value = simpleDateFormat.format(Date(timeInSeconds * 1000))
-                return value
-            }
 
+        companion object {
+            fun formatUnixTime(dateString: String): String {
+                val actual = OffsetDateTime.parse(dateString, DateTimeFormatter.ISO_DATE_TIME)
+                val formatter = DateTimeFormatter.ofPattern("dd MMMM yyyy HH:mm:ss")
+                return actual.format(formatter)
+            }
         }
 }

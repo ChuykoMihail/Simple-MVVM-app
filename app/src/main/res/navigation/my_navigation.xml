@@ -8,5 +8,21 @@
         android:id="@+id/incidentModelFragment"
         android:name="com.example.dicetest.ui.IncidentModelFragment"
         android:label="fragment_item_list"
-        tools:layout="@layout/fragment_item_list" />
+        tools:layout="@layout/fragment_item_list" >
+        <action
+            android:id="@+id/action_incidentModelFragment_to_incidentDetailFragemnt"
+            app:destination="@id/incidentDetailFragemnt" />
+    </fragment>
+    <fragment
+        android:id="@+id/incidentDetailFragemnt"
+        android:name="com.example.dicetest.ui.IncidentDetailFragemnt"
+        android:label="fragment_incident_detail_fragemnt"
+        tools:layout="@layout/fragment_incident_detail_fragemnt" >
+        <action
+            android:id="@+id/action_incidentDetailFragemnt_to_incidentModelFragment"
+            app:destination="@id/incidentModelFragment" />
+        <argument
+            android:name="incident_id"
+            app:argType="integer" />
+    </fragment>
 </navigation>

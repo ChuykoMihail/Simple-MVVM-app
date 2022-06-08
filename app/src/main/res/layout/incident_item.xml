@@ -3,7 +3,9 @@
 <layout>
     <data>
         <import type="android.view.View" />
-        <import type="com.example.dicetest.data.util.IncidentUtil"/>
+        <variable
+            name = "UtilDate"
+            type = "com.example.dicetest.data.util.IncidentUtil" />
         <variable
             name="itemData"
             type="com.example.dicetest.data.repos.model.IncidentModel" />
@@ -17,6 +19,7 @@
         android:layout_marginVertical="12dp">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/incident_card"
             android:layout_margin="7dp"
             card_view:cardCornerRadius="8dp"
             card_view:cardElevation="3dp"
@@ -79,7 +82,7 @@
                         android:layout_weight="1"
                         android:gravity="right"
                         android:id="@+id/is_known_error_date"
-                        android:text="@{IncidentUtil.}" />
+                        android:text="@{UtilDate.Companion.formatUnixTime(itemData.ISKNOWNERRORDATE)}" />
                 </LinearLayout>
 
                 <View
@@ -110,7 +113,7 @@
                         android:layout_weight="1"
                         android:gravity="right"
                         android:id="@+id/target_finish"
-                        android:text="@{itemData.TARGETFINISH}" />
+                        android:text="@{UtilDate.Companion.formatUnixTime(itemData.TARGETFINISH)}" />
                 </LinearLayout>
 
                 <View

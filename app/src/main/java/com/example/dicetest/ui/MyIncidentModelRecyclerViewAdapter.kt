@@ -3,8 +3,11 @@ package com.example.dicetest.ui
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.databinding.ViewDataBinding
+import androidx.navigation.Navigation
 import com.example.dicetest.BR
+import com.example.dicetest.R
 import com.example.dicetest.data.repos.model.IncidentModel
 import com.example.dicetest.databinding.IncidentItemBinding
 
@@ -22,7 +25,7 @@ class MyIncidentModelRecyclerViewAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.setup(incedList[position])
+        holder.setup(incedList[position], position)
     }
 
     override fun getItemCount(): Int = incedList.size
@@ -32,22 +35,14 @@ class MyIncidentModelRecyclerViewAdapter(
         notifyDataSetChanged()
     }
 
-    inner class ViewHolder(private val binding: ViewDataBinding, private val viewmodel: IncidentFragmentViewModel)
+    inner class ViewHolder(private val binding: IncidentItemBinding, private val viewmodel: IncidentFragmentViewModel)
         : RecyclerView.ViewHolder(binding.root) {
 
-        fun setup(itemData: IncidentModel) {
+        fun setup(itemData: IncidentModel, pos: Int) {
             binding.setVariable(BR.itemData, itemData)
+            val bundle = bundleOf("incident_id" to pos)
+            binding.incidentCard.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_incidentModelFragment_to_incidentDetailFragemnt, bundle))
             binding.executePendingBindings()
+        }
     }
-
-
-
-
-//        val sysName : TextView = binding.extSysName
-//        val description: TextView = binding.description
-//        val errorDate: TextView = binding.isKnownErrorDate
-//        val finishDate: TextView = binding.targetFinish
-//        val status: TextView = binding.status
-    }
-
 }
